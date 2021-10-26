@@ -1,6 +1,6 @@
 {
   "name": "azde-scripts",
-  "description": "this tool makes it easy to compile, test, and package azure devops extensions",
+  "description": "this tool makes it easy to create, compile, test, and package azure devops extensions",
   "version": "1.0.0",
   "author": "David Polania",
   "bin": {
@@ -13,7 +13,7 @@
     "@oclif/config": "^1.17.0",
     "@oclif/plugin-help": "^3.2.3",
     "fs-extra": "^10.0.0",
-    "generator-azure-devops-extension": "^0.1.3",
+    "generator-azure-devops-extension": "*",
     "rimraf": "^3.0.2",
     "tslib": "^1.14.1",
     "yeoman-environment": "^3.6.0"

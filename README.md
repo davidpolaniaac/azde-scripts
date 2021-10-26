@@ -19,7 +19,7 @@ $ npm install -g azde-scripts
 $ azde-scripts COMMAND
 running command...
 $ azde-scripts (-v|--version|version)
-azde-scripts/1.0.0 darwin-x64 node-v10.24.1
+azde-scripts/1.0.0 darwin-x64 node-v14.16.1
 $ azde-scripts --help [COMMAND]
 USAGE
   $ azde-scripts COMMAND
@@ -28,52 +28,58 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`azde-scripts build [FILE]`](#azde-scripts-build-file)
-* [`azde-scripts create [FILE]`](#azde-scripts-create-file)
-* [`azde-scripts hello [FILE]`](#azde-scripts-hello-file)
+* [`azde-scripts build [COMPONENT]`](#azde-scripts-build-component)
+* [`azde-scripts create TYPE`](#azde-scripts-create-type)
+* [`azde-scripts hello [NAME]`](#azde-scripts-hello-name)
 * [`azde-scripts help [COMMAND]`](#azde-scripts-help-command)
-* [`azde-scripts install [FILE]`](#azde-scripts-install-file)
-* [`azde-scripts package [FILE]`](#azde-scripts-package-file)
+* [`azde-scripts install [COMPONENT]`](#azde-scripts-install-component)
+* [`azde-scripts package [COMPONENT]`](#azde-scripts-package-component)
 
-## `azde-scripts build [FILE]`
+## `azde-scripts build [COMPONENT]`
 
-describe the command here
+The build command is used to invoke the build script from the package.json of each component of the extension.
 
 ```
 USAGE
-  $ azde-scripts build [FILE]
+  $ azde-scripts build [COMPONENT]
 
 OPTIONS
+  -c, --clean=clean  name of the folder that will be deleted before the process
   -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
+  -h, --help         show CLI help
+
+EXAMPLES
+  $ azde-scripts build
+  $ azde-scripts build tasks
 ```
 
 _See code: [src/commands/build.ts](https://github.com/davidpolaniaac/azde-scripts/blob/v1.0.0/src/commands/build.ts)_
 
-## `azde-scripts create [FILE]`
+## `azde-scripts create TYPE`
 
-describe the command here
+Generate project extension
 
 ```
 USAGE
-  $ azde-scripts create [FILE]
+  $ azde-scripts create TYPE
+
+ARGUMENTS
+  TYPE  (task|website|app) [default: app] generator type
 
 OPTIONS
   -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
+  -h, --help   show CLI help
 ```
 
 _See code: [src/commands/create.ts](https://github.com/davidpolaniaac/azde-scripts/blob/v1.0.0/src/commands/create.ts)_
 
-## `azde-scripts hello [FILE]`
+## `azde-scripts hello [NAME]`
 
-describe the command here
+Additional Information
 
 ```
 USAGE
-  $ azde-scripts hello [FILE]
+  $ azde-scripts hello [NAME]
 
 OPTIONS
   -f, --force
@@ -81,8 +87,7 @@ OPTIONS
   -n, --name=name  name to print
 
 EXAMPLE
-  $ azde-scripts hello
-  hello world from ./src/hello.ts!
+  $ azde-scripts hello David
 ```
 
 _See code: [src/commands/hello.ts](https://github.com/davidpolaniaac/azde-scripts/blob/v1.0.0/src/commands/hello.ts)_
@@ -104,34 +109,40 @@ OPTIONS
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.2.3/src/commands/help.ts)_
 
-## `azde-scripts install [FILE]`
+## `azde-scripts install [COMPONENT]`
 
-describe the command here
+The install command is used to invoke the install script from the package.json of each component of the extension.
 
 ```
 USAGE
-  $ azde-scripts install [FILE]
+  $ azde-scripts install [COMPONENT]
 
 OPTIONS
+  -c, --clean=clean    name of the folder that will be deleted before the process
   -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
+  -h, --help           show CLI help
+  -n, --npm=npm        [default: i] overrider the npm run command
+  -s, --script=script  [default: custom] add the npm run command script. for example `compile`
+
+EXAMPLES
+  $ azde-scripts install
+  $ azde-scripts install tasks
+  $ azde-scripts install tasks -n run -s custom
 ```
 
 _See code: [src/commands/install.ts](https://github.com/davidpolaniaac/azde-scripts/blob/v1.0.0/src/commands/install.ts)_
 
-## `azde-scripts package [FILE]`
+## `azde-scripts package [COMPONENT]`
 
-describe the command here
+The package command is used to invoke the install script from the package.json of each component of the extension.
 
 ```
 USAGE
-  $ azde-scripts package [FILE]
+  $ azde-scripts package [COMPONENT]
 
 OPTIONS
   -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
+  -h, --help   show CLI help
 ```
 
 _See code: [src/commands/package.ts](https://github.com/davidpolaniaac/azde-scripts/blob/v1.0.0/src/commands/package.ts)_
