@@ -1,5 +1,6 @@
-import {Command, flags} from '@oclif/command'
 import * as yeoman from 'yeoman-environment'
+
+import {Command, flags} from '@oclif/command'
 
 export default class Create extends Command {
   static description = 'Generate project extension';
@@ -13,8 +14,8 @@ export default class Create extends Command {
     {
       name: 'type',
       required: true,
-      options: ['task', 'website', 'app'],
-      default: 'app',
+      options: ['extension','task', 'gate', 'decorator', 'website'],
+      default: 'extension',
       description: 'generator type',
     },
   ];
@@ -32,7 +33,7 @@ export default class Create extends Command {
       )
       // @ts-expect-error
       env.run(`azure-devops-extension:${type}`)
-    } catch (error: any) {
+    } catch (error) {
       this.error(`The project could not be generated, something went wrong - code: ${error.code}`)
     }
   }

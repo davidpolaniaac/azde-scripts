@@ -19,7 +19,7 @@ $ npm install -g azde-scripts
 $ azde-scripts COMMAND
 running command...
 $ azde-scripts (-v|--version|version)
-azde-scripts/1.0.0 darwin-x64 node-v14.16.1
+azde-scripts/1.0.1 darwin-x64 node-v14.17.6
 $ azde-scripts --help [COMMAND]
 USAGE
   $ azde-scripts COMMAND
@@ -53,7 +53,7 @@ EXAMPLES
   $ azde-scripts build tasks
 ```
 
-_See code: [src/commands/build.ts](https://github.com/davidpolaniaac/azde-scripts/blob/v1.0.0/src/commands/build.ts)_
+_See code: [src/commands/build.ts](https://github.com/davidpolaniaac/azde-scripts/blob/v1.0.1/src/commands/build.ts)_
 
 ## `azde-scripts create TYPE`
 
@@ -64,14 +64,14 @@ USAGE
   $ azde-scripts create TYPE
 
 ARGUMENTS
-  TYPE  (task|website|app) [default: app] generator type
+  TYPE  (extension|task|gate|decorator|website) [default: extension] generator type
 
 OPTIONS
   -f, --force
   -h, --help   show CLI help
 ```
 
-_See code: [src/commands/create.ts](https://github.com/davidpolaniaac/azde-scripts/blob/v1.0.0/src/commands/create.ts)_
+_See code: [src/commands/create.ts](https://github.com/davidpolaniaac/azde-scripts/blob/v1.0.1/src/commands/create.ts)_
 
 ## `azde-scripts hello [NAME]`
 
@@ -90,7 +90,7 @@ EXAMPLE
   $ azde-scripts hello David
 ```
 
-_See code: [src/commands/hello.ts](https://github.com/davidpolaniaac/azde-scripts/blob/v1.0.0/src/commands/hello.ts)_
+_See code: [src/commands/hello.ts](https://github.com/davidpolaniaac/azde-scripts/blob/v1.0.1/src/commands/hello.ts)_
 
 ## `azde-scripts help [COMMAND]`
 
@@ -130,7 +130,7 @@ EXAMPLES
   $ azde-scripts install tasks -n run -s custom
 ```
 
-_See code: [src/commands/install.ts](https://github.com/davidpolaniaac/azde-scripts/blob/v1.0.0/src/commands/install.ts)_
+_See code: [src/commands/install.ts](https://github.com/davidpolaniaac/azde-scripts/blob/v1.0.1/src/commands/install.ts)_
 
 ## `azde-scripts package [COMPONENT]`
 
@@ -145,5 +145,5 @@ OPTIONS
   -h, --help   show CLI help
 ```
 
-_See code: [src/commands/package.ts](https://github.com/davidpolaniaac/azde-scripts/blob/v1.0.0/src/commands/package.ts)_
+_See code: [src/commands/package.ts](https://github.com/davidpolaniaac/azde-scripts/blob/v1.0.1/src/commands/package.ts)_
 <!-- commandsstop -->
