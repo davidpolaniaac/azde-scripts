@@ -31,7 +31,6 @@ export default class Create extends Command {
         require.resolve(`generator-azure-devops-extension/generators/${type}`),
         `azure-devops-extension:${type}`
       )
-      // @ts-expect-error
       env.run(`azure-devops-extension:${type}`)
     } catch (error) {
       this.error(`The project could not be generated, something went wrong - code: ${error.code}`)

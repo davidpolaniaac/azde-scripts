@@ -19,7 +19,7 @@ $ npm install -g azde-scripts
 $ azde-scripts COMMAND
 running command...
 $ azde-scripts (-v|--version|version)
-azde-scripts/1.0.1 darwin-x64 node-v14.17.6
+azde-scripts/1.0.2 darwin-x64 node-v14.21.3
 $ azde-scripts --help [COMMAND]
 USAGE
   $ azde-scripts COMMAND
@@ -53,7 +53,7 @@ EXAMPLES
   $ azde-scripts build tasks
 ```
 
-_See code: [src/commands/build.ts](https://github.com/davidpolaniaac/azde-scripts/blob/v1.0.1/src/commands/build.ts)_
+_See code: [src/commands/build.ts](https://github.com/davidpolaniaac/azde-scripts/blob/v1.0.2/src/commands/build.ts)_
 
 ## `azde-scripts create TYPE`
 
@@ -71,7 +71,7 @@ OPTIONS
   -h, --help   show CLI help
 ```
 
-_See code: [src/commands/create.ts](https://github.com/davidpolaniaac/azde-scripts/blob/v1.0.1/src/commands/create.ts)_
+_See code: [src/commands/create.ts](https://github.com/davidpolaniaac/azde-scripts/blob/v1.0.2/src/commands/create.ts)_
 
 ## `azde-scripts hello [NAME]`
 
@@ -90,7 +90,7 @@ EXAMPLE
   $ azde-scripts hello David
 ```
 
-_See code: [src/commands/hello.ts](https://github.com/davidpolaniaac/azde-scripts/blob/v1.0.1/src/commands/hello.ts)_
+_See code: [src/commands/hello.ts](https://github.com/davidpolaniaac/azde-scripts/blob/v1.0.2/src/commands/hello.ts)_
 
 ## `azde-scripts help [COMMAND]`
 
@@ -107,7 +107,7 @@ OPTIONS
   --all  see all commands in CLI
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.2.3/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.3.1/src/commands/help.ts)_
 
 ## `azde-scripts install [COMPONENT]`
 
@@ -130,7 +130,7 @@ EXAMPLES
   $ azde-scripts install tasks -n run -s custom
 ```
 
-_See code: [src/commands/install.ts](https://github.com/davidpolaniaac/azde-scripts/blob/v1.0.1/src/commands/install.ts)_
+_See code: [src/commands/install.ts](https://github.com/davidpolaniaac/azde-scripts/blob/v1.0.2/src/commands/install.ts)_
 
 ## `azde-scripts package [COMPONENT]`
 
@@ -145,5 +145,5 @@ OPTIONS
   -h, --help   show CLI help
 ```
 
-_See code: [src/commands/package.ts](https://github.com/davidpolaniaac/azde-scripts/blob/v1.0.1/src/commands/package.ts)_
+_See code: [src/commands/package.ts](https://github.com/davidpolaniaac/azde-scripts/blob/v1.0.2/src/commands/package.ts)_
 <!-- commandsstop -->
