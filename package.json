@@ -1,7 +1,7 @@
 {
   "name": "azde-scripts",
   "description": "this tool makes it easy to create, compile, test, and package azure devops extensions",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "author": "David Polania",
   "bin": {
     "azde-scripts": "./bin/run",

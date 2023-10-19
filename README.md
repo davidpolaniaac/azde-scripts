@@ -19,7 +19,7 @@ $ npm install -g azde-scripts
 $ azde-scripts COMMAND
 running command...
 $ azde-scripts (--version)
-azde-scripts/2.0.0 darwin-x64 node-v16.20.2
+azde-scripts/2.0.1 darwin-x64 node-v18.18.0
 $ azde-scripts --help [COMMAND]
 USAGE
   $ azde-scripts COMMAND
@@ -41,7 +41,10 @@ The build command is used to invoke the build script from the package.json of ea
 
 ```
 USAGE
-  $ azde-scripts build [COMPONENT] [-h] [-c <value>] [-f]
+  $ azde-scripts build [COMPONENT] [-c <value>] [-f] [-h]
+
+ARGUMENTS
+  COMPONENT  component
 
 FLAGS
   -c, --clean=<value>  name of the folder that will be deleted before the process
@@ -57,7 +60,7 @@ EXAMPLES
   $ azde-scripts build tasks
 ```
 
-_See code: [src/commands/build.ts](https://github.com/davidpolaniaac/azde-scripts/blob/v2.0.0/src/commands/build.ts)_
+_See code: [src/commands/build.ts](https://github.com/davidpolaniaac/azde-scripts/blob/v2.0.1/src/commands/build.ts)_
 
 ## `azde-scripts create TYPE`
 
@@ -65,7 +68,7 @@ Generate project extension
 
 ```
 USAGE
-  $ azde-scripts create TYPE [-h] [-f]
+  $ azde-scripts create TYPE [-f] [-h]
 
 ARGUMENTS
   TYPE  (extension|task|gate|decorator|website) [default: extension] generator type
@@ -78,7 +81,7 @@ DESCRIPTION
   Generate project extension
 ```
 
-_See code: [src/commands/create.ts](https://github.com/davidpolaniaac/azde-scripts/blob/v2.0.0/src/commands/create.ts)_
+_See code: [src/commands/create.ts](https://github.com/davidpolaniaac/azde-scripts/blob/v2.0.1/src/commands/create.ts)_
 
 ## `azde-scripts hello [NAME]`
 
@@ -86,7 +89,10 @@ Additional Information
 
 ```
 USAGE
-  $ azde-scripts hello [NAME] [-h] [-n <value>] [-f]
+  $ azde-scripts hello [NAME] [-f] [-h] [-n <value>]
+
+ARGUMENTS
+  NAME  name
 
 FLAGS
   -f, --force
@@ -100,7 +106,7 @@ EXAMPLES
   $ azde-scripts hello David
 ```
 
-_See code: [src/commands/hello.ts](https://github.com/davidpolaniaac/azde-scripts/blob/v2.0.0/src/commands/hello.ts)_
+_See code: [src/commands/hello.ts](https://github.com/davidpolaniaac/azde-scripts/blob/v2.0.1/src/commands/hello.ts)_
 
 ## `azde-scripts help [COMMANDS]`
 
@@ -128,7 +134,10 @@ The install command is used to invoke the install script from the package.json o
 
 ```
 USAGE
-  $ azde-scripts install [COMPONENT] [-h] [-c <value>] [-s <value> -n <value>] [-f]
+  $ azde-scripts install [COMPONENT] [-c <value>] [-f] [-h] [-s <value> -n <value>]
+
+ARGUMENTS
+  COMPONENT  component
 
 FLAGS
   -c, --clean=<value>   name of the folder that will be deleted before the process
@@ -148,7 +157,7 @@ EXAMPLES
   $ azde-scripts install tasks -n run -s custom
 ```
 
-_See code: [src/commands/install.ts](https://github.com/davidpolaniaac/azde-scripts/blob/v2.0.0/src/commands/install.ts)_
+_See code: [src/commands/install.ts](https://github.com/davidpolaniaac/azde-scripts/blob/v2.0.1/src/commands/install.ts)_
 
 ## `azde-scripts package [COMPONENT]`
 
@@ -156,7 +165,10 @@ The package command is used to invoke the install script from the package.json o
 
 ```
 USAGE
-  $ azde-scripts package [COMPONENT] [-h] [-f]
+  $ azde-scripts package [COMPONENT] [-f] [-h]
+
+ARGUMENTS
+  COMPONENT  component
 
 FLAGS
   -f, --force
@@ -166,5 +178,5 @@ DESCRIPTION
   The package command is used to invoke the install script from the package.json of each component of the extension.
 ```
 
-_See code: [src/commands/package.ts](https://github.com/davidpolaniaac/azde-scripts/blob/v2.0.0/src/commands/package.ts)_
+_See code: [src/commands/package.ts](https://github.com/davidpolaniaac/azde-scripts/blob/v2.0.1/src/commands/package.ts)_
 <!-- commandsstop -->

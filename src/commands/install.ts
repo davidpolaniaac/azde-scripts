@@ -1,8 +1,12 @@
-import {Command, Flags} from '@oclif/core'
+import {Args, Command, Flags} from '@oclif/core'
 import {execNpm, runCommand} from '../common'
 
 export default class Install extends Command {
-  static description = 'The install command is used to invoke the install script from the package.json of each component of the extension.';
+  static args = {
+    component: Args.string({description: 'component', required: false}),
+  }
+
+  static description = 'The install command is used to invoke the install script from the package.json of each component of the extension.'
 
   static examples = [
     '$ azde-scripts install',
@@ -11,14 +15,12 @@ export default class Install extends Command {
   ]
 
   static flags = {
-    help: Flags.help({char: 'h'}),
     clean: Flags.string({char: 'c', description: 'name of the folder that will be deleted before the process'}),
-    npm: Flags.string({char: 'n', description: 'overrider the npm run command', default: 'i'}),
-    script: Flags.string({char: 's', description: 'add the npm run command script. for example `compile`', default: 'custom', dependsOn: ['npm']}),
     force: Flags.boolean({char: 'f'}),
+    help: Flags.help({char: 'h'}),
+    npm: Flags.string({char: 'n', default: 'i', description: 'overrider the npm run command'}),
+    script: Flags.string({char: 's', default: 'custom', dependsOn: ['npm'], description: 'add the npm run command script. for example `compile`'}),
   }
-
-  static args: any = [{name: 'component'}]
 
   async run() {
     const {args, flags} = await this.parse(Install)

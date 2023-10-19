@@ -1,8 +1,12 @@
-import {Command, Flags} from '@oclif/core'
+import {Args, Command, Flags} from '@oclif/core'
 import {execNpm, runCommand} from '../common'
 
 export default class Build extends Command {
-  static description = 'The build command is used to invoke the build script from the package.json of each component of the extension.';
+  static args = {
+    component: Args.string({description: 'component'}),
+  }
+
+  static description = 'The build command is used to invoke the build script from the package.json of each component of the extension.'
 
   static examples = [
     '$ azde-scripts build',
@@ -10,14 +14,12 @@ export default class Build extends Command {
   ]
 
   static flags = {
-    help: Flags.help({char: 'h'}),
     // flag with a value (-n, --name=VALUE)
     clean: Flags.string({char: 'c', description: 'name of the folder that will be deleted before the process'}),
     // flag with no value (-f, --force)
     force: Flags.boolean({char: 'f'}),
+    help: Flags.help({char: 'h'}),
   }
-
-  static args: any = [{name: 'component'}]
 
   async run() {
     const {args, flags} = await this.parse(Build)
