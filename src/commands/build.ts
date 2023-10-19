@@ -1,5 +1,5 @@
-import {Command, flags} from '@oclif/command'
-import {runCommand, execNpm} from '../common'
+import {Command, Flags} from '@oclif/core'
+import {execNpm, runCommand} from '../common'
 
 export default class Build extends Command {
   static description = 'The build command is used to invoke the build script from the package.json of each component of the extension.';
@@ -10,17 +10,17 @@ export default class Build extends Command {
   ]
 
   static flags = {
-    help: flags.help({char: 'h'}),
+    help: Flags.help({char: 'h'}),
     // flag with a value (-n, --name=VALUE)
-    clean: flags.string({char: 'c', description: 'name of the folder that will be deleted before the process'}),
+    clean: Flags.string({char: 'c', description: 'name of the folder that will be deleted before the process'}),
     // flag with no value (-f, --force)
-    force: flags.boolean({char: 'f'}),
+    force: Flags.boolean({char: 'f'}),
   }
 
-  static args = [{name: 'component'}]
+  static args: any = [{name: 'component'}]
 
   async run() {
-    const {args, flags} = this.parse(Build)
+    const {args, flags} = await this.parse(Build)
 
     const clean = flags.clean ?? 'outDirConfig'
     this.log(`The ${clean} directory will be removed before build`)

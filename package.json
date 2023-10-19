@@ -1,7 +1,7 @@
 {
   "name": "azde-scripts",
   "description": "this tool makes it easy to create, compile, test, and package azure devops extensions",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "author": "David Polania",
   "bin": {
     "azde-scripts": "./bin/run",
@@ -10,8 +10,7 @@
   },
   "bugs": "https://github.com/davidpolaniaac/azde-scripts/issues",
   "dependencies": {
-    "@oclif/command": "^1.8.0",
-    "@oclif/config": "^1.17.0",
+    "@oclif/core": "^3.5.0",
     "@oclif/plugin-help": "^6.0.3",
     "fs-extra": "^11.1.1",
     "generator-azure-devops-extension": "*",
@@ -20,7 +19,7 @@
     "yeoman-environment": "^3.19.3"
   },
   "devDependencies": {
-    "@oclif/dev-cli": "^1.26.0",
+    "@oclif/prettier-config": "^0.2.1",
     "@oclif/test": "^3.0.2",
     "@types/chai": "^4.3.9",
     "@types/fs-extra": "^11.0.3",
@@ -32,14 +31,15 @@
     "eslint": "^8.51.0",
     "eslint-config-oclif": "^5.0.0",
     "eslint-config-oclif-typescript": "^3.0.6",
-    "globby": "^13.2.2",
     "mocha": "^10.2.0",
     "nyc": "^15.1.0",
+    "oclif": "^4.0.3",
+    "shx": "^0.3.4",
     "ts-node": "^10.9.1",
     "typescript": "^5.2.2"
   },
   "engines": {
-    "node": ">=8.0.0"
+    "node": ">=16.0.0"
   },
   "files": [
     "/bin",
@@ -62,12 +62,12 @@
   },
   "repository": "davidpolaniaac/azde-scripts",
   "scripts": {
-    "postpack": "rm -f oclif.manifest.json",
+    "postpack": "shx rm -f oclif.manifest.json",
     "posttest": "eslint . --ext .ts --config .eslintrc",
-    "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
+    "prepack": "npm run build && oclif manifest && oclif readme",
     "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
-    "version": "oclif-dev readme && git add README.md",
-    "build": "tsc -b",
+    "version": "oclif readme && git add README.md",
+    "build": "shx rm -rf dist && tsc -b",
     "format": "eslint . --ext .ts --config .eslintrc --fix"
   },
   "types": "lib/index.d.ts"

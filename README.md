@@ -18,8 +18,8 @@ this tool makes it easy to compile, test, and package azure devops extensions
 $ npm install -g azde-scripts
 $ azde-scripts COMMAND
 running command...
-$ azde-scripts (-v|--version|version)
-azde-scripts/1.0.3 darwin-x64 node-v14.21.3
+$ azde-scripts (--version)
+azde-scripts/2.0.0 darwin-x64 node-v16.20.2
 $ azde-scripts --help [COMMAND]
 USAGE
   $ azde-scripts COMMAND
@@ -31,7 +31,7 @@ USAGE
 * [`azde-scripts build [COMPONENT]`](#azde-scripts-build-component)
 * [`azde-scripts create TYPE`](#azde-scripts-create-type)
 * [`azde-scripts hello [NAME]`](#azde-scripts-hello-name)
-* [`azde-scripts help [COMMAND]`](#azde-scripts-help-command)
+* [`azde-scripts help [COMMANDS]`](#azde-scripts-help-commands)
 * [`azde-scripts install [COMPONENT]`](#azde-scripts-install-component)
 * [`azde-scripts package [COMPONENT]`](#azde-scripts-package-component)
 
@@ -41,19 +41,23 @@ The build command is used to invoke the build script from the package.json of ea
 
 ```
 USAGE
-  $ azde-scripts build [COMPONENT]
+  $ azde-scripts build [COMPONENT] [-h] [-c <value>] [-f]
 
-OPTIONS
-  -c, --clean=clean  name of the folder that will be deleted before the process
+FLAGS
+  -c, --clean=<value>  name of the folder that will be deleted before the process
   -f, --force
-  -h, --help         show CLI help
+  -h, --help           Show CLI help.
+
+DESCRIPTION
+  The build command is used to invoke the build script from the package.json of each component of the extension.
 
 EXAMPLES
   $ azde-scripts build
+
   $ azde-scripts build tasks
 ```
 
-_See code: [src/commands/build.ts](https://github.com/davidpolaniaac/azde-scripts/blob/v1.0.3/src/commands/build.ts)_
+_See code: [src/commands/build.ts](https://github.com/davidpolaniaac/azde-scripts/blob/v2.0.0/src/commands/build.ts)_
 
 ## `azde-scripts create TYPE`
 
@@ -61,17 +65,20 @@ Generate project extension
 
 ```
 USAGE
-  $ azde-scripts create TYPE
+  $ azde-scripts create TYPE [-h] [-f]
 
 ARGUMENTS
   TYPE  (extension|task|gate|decorator|website) [default: extension] generator type
 
-OPTIONS
+FLAGS
   -f, --force
-  -h, --help   show CLI help
+  -h, --help   Show CLI help.
+
+DESCRIPTION
+  Generate project extension
 ```
 
-_See code: [src/commands/create.ts](https://github.com/davidpolaniaac/azde-scripts/blob/v1.0.3/src/commands/create.ts)_
+_See code: [src/commands/create.ts](https://github.com/davidpolaniaac/azde-scripts/blob/v2.0.0/src/commands/create.ts)_
 
 ## `azde-scripts hello [NAME]`
 
@@ -79,35 +86,41 @@ Additional Information
 
 ```
 USAGE
-  $ azde-scripts hello [NAME]
+  $ azde-scripts hello [NAME] [-h] [-n <value>] [-f]
 
-OPTIONS
+FLAGS
   -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
+  -h, --help          Show CLI help.
+  -n, --name=<value>  name to print
 
-EXAMPLE
+DESCRIPTION
+  Additional Information
+
+EXAMPLES
   $ azde-scripts hello David
 ```
 
-_See code: [src/commands/hello.ts](https://github.com/davidpolaniaac/azde-scripts/blob/v1.0.3/src/commands/hello.ts)_
+_See code: [src/commands/hello.ts](https://github.com/davidpolaniaac/azde-scripts/blob/v2.0.0/src/commands/hello.ts)_
 
-## `azde-scripts help [COMMAND]`
+## `azde-scripts help [COMMANDS]`
 
-display help for azde-scripts
+Display help for azde-scripts.
 
 ```
 USAGE
-  $ azde-scripts help [COMMAND]
+  $ azde-scripts help [COMMANDS] [-n]
 
 ARGUMENTS
-  COMMAND  command to show help for
+  COMMANDS  Command to show help for.
 
-OPTIONS
-  --all  see all commands in CLI
+FLAGS
+  -n, --nested-commands  Include all nested commands in the output.
+
+DESCRIPTION
+  Display help for azde-scripts.
 ```
 
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.3.1/src/commands/help.ts)_
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v6.0.3/src/commands/help.ts)_
 
 ## `azde-scripts install [COMPONENT]`
 
@@ -115,22 +128,27 @@ The install command is used to invoke the install script from the package.json o
 
 ```
 USAGE
-  $ azde-scripts install [COMPONENT]
+  $ azde-scripts install [COMPONENT] [-h] [-c <value>] [-s <value> -n <value>] [-f]
 
-OPTIONS
-  -c, --clean=clean    name of the folder that will be deleted before the process
+FLAGS
+  -c, --clean=<value>   name of the folder that will be deleted before the process
   -f, --force
-  -h, --help           show CLI help
-  -n, --npm=npm        [default: i] overrider the npm run command
-  -s, --script=script  [default: custom] add the npm run command script. for example `compile`
+  -h, --help            Show CLI help.
+  -n, --npm=<value>     [default: i] overrider the npm run command
+  -s, --script=<value>  [default: custom] add the npm run command script. for example `compile`
+
+DESCRIPTION
+  The install command is used to invoke the install script from the package.json of each component of the extension.
 
 EXAMPLES
   $ azde-scripts install
+
   $ azde-scripts install tasks
+
   $ azde-scripts install tasks -n run -s custom
 ```
 
-_See code: [src/commands/install.ts](https://github.com/davidpolaniaac/azde-scripts/blob/v1.0.3/src/commands/install.ts)_
+_See code: [src/commands/install.ts](https://github.com/davidpolaniaac/azde-scripts/blob/v2.0.0/src/commands/install.ts)_
 
 ## `azde-scripts package [COMPONENT]`
 
@@ -138,12 +156,15 @@ The package command is used to invoke the install script from the package.json o
 
 ```
 USAGE
-  $ azde-scripts package [COMPONENT]
+  $ azde-scripts package [COMPONENT] [-h] [-f]
 
-OPTIONS
+FLAGS
   -f, --force
-  -h, --help   show CLI help
+  -h, --help   Show CLI help.
+
+DESCRIPTION
+  The package command is used to invoke the install script from the package.json of each component of the extension.
 ```
 
-_See code: [src/commands/package.ts](https://github.com/davidpolaniaac/azde-scripts/blob/v1.0.3/src/commands/package.ts)_
+_See code: [src/commands/package.ts](https://github.com/davidpolaniaac/azde-scripts/blob/v2.0.0/src/commands/package.ts)_
 <!-- commandsstop -->

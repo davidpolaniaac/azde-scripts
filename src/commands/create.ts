@@ -1,16 +1,16 @@
 import * as yeoman from 'yeoman-environment'
 
-import {Command, flags} from '@oclif/command'
+import {Command, Flags} from '@oclif/core'
 
 export default class Create extends Command {
   static description = 'Generate project extension';
 
   static flags = {
-    help: flags.help({char: 'h'}),
-    force: flags.boolean({char: 'f'}),
+    help: Flags.help({char: 'h'}),
+    force: Flags.boolean({char: 'f'}),
   };
 
-  static args = [
+  static args: any = [
     {
       name: 'type',
       required: true,
@@ -21,7 +21,7 @@ export default class Create extends Command {
   ];
 
   async run() {
-    const {args} = this.parse(Create)
+    const {args} = await this.parse(Create)
     const type = args.type
     this.log('Hello world from Generator extensions')
     const env = yeoman.createEnv()
