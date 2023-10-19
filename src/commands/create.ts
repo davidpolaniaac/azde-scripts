@@ -14,14 +14,14 @@ export default class Create extends Command {
     {
       name: 'type',
       required: true,
-      options: ['extension','task', 'gate', 'decorator', 'website'],
+      options: ['extension', 'task', 'gate', 'decorator', 'website'],
       default: 'extension',
       description: 'generator type',
     },
   ];
 
   async run() {
-    const {args, flags} = this.parse(Create)
+    const {args} = this.parse(Create)
     const type = args.type
     this.log('Hello world from Generator extensions')
     const env = yeoman.createEnv()
